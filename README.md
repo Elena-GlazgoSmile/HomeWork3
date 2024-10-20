@@ -79,6 +79,11 @@ https://docs.google.com/spreadsheets/d/1oA7CA2SOPEGeYGe7Af3udjkwtGNl03D50zpvPDMy
 
 Ход работы:
 
+![Снимок экрана 2024-10-20 192135](https://github.com/user-attachments/assets/c8a20b02-f56b-4bd5-9063-c5929f14105f)
+
+![Снимок экрана 2024-10-20 192238](https://github.com/user-attachments/assets/b25e0555-db15-41db-9607-d1ff5a5d3c6f)
+
+![Снимок экрана 2024-10-20 192429](https://github.com/user-attachments/assets/5bfa42f9-254d-4c86-b840-ed05c6790c63)
 
 
 ## Задание 3
