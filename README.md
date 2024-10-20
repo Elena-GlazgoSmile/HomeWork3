@@ -79,6 +79,8 @@ https://docs.google.com/spreadsheets/d/1oA7CA2SOPEGeYGe7Af3udjkwtGNl03D50zpvPDMy
 
 Ход работы:
 
+Я построила параметры оружия не только того, которое можно купить в магазине игры Save RTF, но и того оружия, которое я предлагала как дополнительное, чтобы больше было разнообразия, начиная от оружия с минимальным уроном, но большим количеством паторонов, или оружием большого поражения, с которым не страшно выходить против боссов игры.
+
 ![Снимок экрана 2024-10-20 192135](https://github.com/user-attachments/assets/c8a20b02-f56b-4bd5-9063-c5929f14105f)
 
 ![Снимок экрана 2024-10-20 192238](https://github.com/user-attachments/assets/b25e0555-db15-41db-9607-d1ff5a5d3c6f)
@@ -111,6 +113,80 @@ https://docs.google.com/spreadsheets/d/1oA7CA2SOPEGeYGe7Af3udjkwtGNl03D50zpvPDMy
 
 Ход работы:
 
+```py
+import pandas as pd
+
+data = pd.read_excel('HjmeWork3_GameDiva.xlsx')
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+
+print(data)
+
+pd.reset_option('display.max_rows')
+pd.reset_option('display.max_columns')
+
+```
+
+Прежде всего я визуализировала данные в Python в среде Jupiter. На данном скрине представлен код:
+
+![Снимок экрана 2024-10-20 205653](https://github.com/user-attachments/assets/62910a37-5d81-4ad1-9366-97d7d1c275d4)
+
+Немного данных из таблицы, которые выводились после завершения программы:
+
+![Снимок экрана 2024-10-20 205921](https://github.com/user-attachments/assets/316d262d-8476-45cb-bcc0-046c77a3f118)
+
+![Снимок экрана 2024-10-20 205953](https://github.com/user-attachments/assets/3b73f790-3745-450e-92dd-aa61546bfb8e)
+
+![Снимок экрана 2024-10-20 210002](https://github.com/user-attachments/assets/0d44c502-4825-404e-9495-6490c965646e)
+
+![Снимок экрана 2024-10-20 210010](https://github.com/user-attachments/assets/5687489f-fa39-4423-84ab-e5d0cb0e0321)
+
+Далее идёт визуализация в Unity. Я создала пустой объект HomeWork3, на который я вдальнейшем помещу код CVS Reader
+
+```C#
+using System.Collections.Generic;
+using UnityEngine;
+using System.IO;
+
+public class CSVReader : MonoBehaviour
+{
+    void Start()
+    {
+        string filePath = Path.Combine(Application.streamingAssetsPath, "H.csv");
+        List<string[]> data = ReadCSV(filePath);
+
+        foreach (var row in data)
+        {
+            Debug.Log(string.Join(", ", row));
+        }
+    }
+
+    List<string[]> ReadCSV(string filePath)
+    {
+        List<string[]> data = new List<string[]>();
+        using (StreamReader sr = new StreamReader(filePath))
+        {
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                string[] values = line.Split(',');
+                data.Add(values);
+            }
+        }
+        return data;
+    }
+}
+```
+
+![Снимок экрана 2024-10-20 213920](https://github.com/user-attachments/assets/04543b17-aec4-45f6-88f3-ee46aff1a2ee)
+
+![Снимок экрана 2024-10-20 213846](https://github.com/user-attachments/assets/88ed7cf4-53cc-419c-a7e1-3ea24ca511dd)
+
+Выводились данные в консоли, которые Вы можете увидеть на этих скринах:
+
+![Снимок экрана 2024-10-20 213805](https://github.com/user-attachments/assets/abd993b3-7583-4c4c-8f4b-647209137183)
+
+![Снимок экрана 2024-10-20 213817](https://github.com/user-attachments/assets/088682b2-150f-43a6-8cf0-b939ed80756c)
 
 ## Выводы
 
